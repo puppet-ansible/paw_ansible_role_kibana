@@ -1,0 +1,108 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Execute the entire Ansible role imperatively",
+  "input_method": "environment",
+  "parameters": {
+    "kibana_version": {
+      "description": "Ansible role variable (default: 7.x)",
+      "type": "Optional[String]"
+    },
+    "kibana_server_port": {
+      "description": "Ansible role variable (default: 5601)",
+      "type": "Optional[Integer]"
+    },
+    "kibana_server_host": {
+      "description": "Ansible role variable (default: 0.0.0.0)",
+      "type": "Optional[String]"
+    },
+    "kibana_elasticsearch_url": {
+      "description": "Ansible role variable (default: http://localhost:9200)",
+      "type": "Optional[String]"
+    },
+    "kibana_elasticsearch_username": {
+      "description": "Ansible role variable (default: )",
+      "type": "Optional[String]"
+    },
+    "kibana_elasticsearch_password": {
+      "description": "Ansible role variable (default: )",
+      "type": "Optional[String]"
+    },
+    "kibana_package": {
+      "description": "Ansible role variable (default: kibana)",
+      "type": "Optional[String]"
+    },
+    "kibana_package_state": {
+      "description": "Ansible role variable (default: present)",
+      "type": "Optional[String]"
+    },
+    "kibana_service_state": {
+      "description": "Ansible role variable (default: started)",
+      "type": "Optional[String]"
+    },
+    "kibana_service_enabled": {
+      "description": "Ansible role variable (default: true)",
+      "type": "Optional[Boolean]"
+    },
+    "kibana_config_template": {
+      "description": "Ansible role variable (default: kibana.yml.j2)",
+      "type": "Optional[String]"
+    },
+    "kibana_config_file_path": {
+      "description": "Ansible role variable (default: /etc/kibana/kibana.yml)",
+      "type": "Optional[String]"
+    },
+    "par_tags": {
+      "description": "An array of Ansible tags to execute (optional)",
+      "type": "Optional[Array[String]]"
+    },
+    "par_skip_tags": {
+      "description": "An array of Ansible tags to skip (optional)",
+      "type": "Optional[Array[String]]"
+    },
+    "par_start_at_task": {
+      "description": "The name of the task to start execution at (optional)",
+      "type": "Optional[String]"
+    },
+    "par_limit": {
+      "description": "Limit playbook execution to specific hosts (optional)",
+      "type": "Optional[String]"
+    },
+    "par_verbose": {
+      "description": "Enable verbose output from Ansible (optional)",
+      "type": "Optional[Boolean]"
+    },
+    "par_check_mode": {
+      "description": "Run Ansible in check mode (dry-run) (optional)",
+      "type": "Optional[Boolean]"
+    },
+    "par_timeout": {
+      "description": "Timeout in seconds for playbook execution (optional)",
+      "type": "Optional[Integer]"
+    },
+    "par_user": {
+      "description": "Remote user to use for Ansible connections (optional)",
+      "type": "Optional[String]"
+    },
+    "par_env_vars": {
+      "description": "Additional environment variables for ansible-playbook execution (optional)",
+      "type": "Optional[Hash]"
+    }
+  },
+  "implementations": [
+    {
+      "name": "paw_ansible_role_kibana.sh",
+      "requirements": [
+        "shell"
+      ],
+      "input_method": "environment"
+    },
+    {
+      "name": "paw_ansible_role_kibana.ps1",
+      "requirements": [
+        "powershell"
+      ],
+      "input_method": "environment"
+    }
+  ]
+}

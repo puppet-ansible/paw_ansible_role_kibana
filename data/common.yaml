@@ -1,0 +1,13 @@
+---
+paw_ansible_role_kibana::kibana_version: 7.x
+paw_ansible_role_kibana::kibana_server_port: 5601
+paw_ansible_role_kibana::kibana_server_host: 0.0.0.0
+paw_ansible_role_kibana::kibana_elasticsearch_url: http://localhost:9200
+paw_ansible_role_kibana::kibana_elasticsearch_username: ''
+paw_ansible_role_kibana::kibana_elasticsearch_password: ''
+paw_ansible_role_kibana::kibana_package: kibana
+paw_ansible_role_kibana::kibana_package_state: present
+paw_ansible_role_kibana::kibana_service_state: started
+paw_ansible_role_kibana::kibana_service_enabled: true
+paw_ansible_role_kibana::kibana_config_template: kibana.yml.j2
+paw_ansible_role_kibana::kibana_config_file_path: "/etc/kibana/kibana.yml"
